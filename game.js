@@ -37,7 +37,7 @@ var Trasgu = function() { //Muñeco.
 
     this.reload = this.reloadTime;
     this.x = Game.width/2 - this.w/2;
-    this.y = Game.height/2 - this.h/2;
+    this.y = Game.height/2 - this.h/2 + 30;
     this.step = function(dt) { 
       
  
@@ -60,7 +60,7 @@ var Pantalon = function(sx,sy,fr) {
     this.origenx=sx;
     this.origeny=sy;
     this.colocadox=Game.width/2-83;
-    this.colocadoy=Game.height/2+115;
+    this.colocadoy=Game.height/2+145;
     
         
     this.step = function(dt) {

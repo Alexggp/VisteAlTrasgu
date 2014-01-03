@@ -338,13 +338,64 @@ var mouse ={
 
 var imprimir=function(){
 
-
       $("#info").css("display", "inline"); 
-      $(".noprint").css("display", "none"); 
-      window.print();
-      $("#info").css("display", "none"); 
-      $(".noprint").css("display", "inline"); 
+      $(".noprint").css("display", "none");
+      
+      
+      
+      //Vamos a eliminar del board las prendas no colocadas
+      //de manera temporal
+      
+      var saved = Game.boards[1].objects;
+      var nueva = [];
+      nueva.push(Game.boards[1].objects[0]);
+      
+     
+      
+      
+     
+      
+      for (cont in Game.boards[1].objects){        
+        if (Game.boards[1].objects[cont].x==Game.boards[1].objects[cont].colocadox){
+            nueva.push(Game.boards[1].objects[cont]);
+        }
+      }
 
+      Game.boards[1].objects=nueva;
+
+      
+      
+      // dejamos un tiempo para que se pinte la pagina con las restricciones
+      setTimeout(function(){
+                        window.print();
+                        $("#info").css("display", "none"); 
+                        $(".noprint").css("display", "inline");
+                        
+                        //volvemos a dejar el board como estaba
+                        Game.boards[1].objects=saved;
+                  },1/9);
+};
+
+var capaNombre = function(nombre) {
+  
+    this.step = function(dt) {};
+    this.draw = function(ctx) {
+	    ctx.fillStyle = "#B404AE";
+	    ctx.textAlign = "center";
+
+	    ctx.font = "bold 40px Comic Sans MS";
+	    ctx.fillText(nombre,Game.width/2,50);
+    }
+};
+
+
+var cogerNombre= function(){
+      var input = $("#nombre").val();
+      if (input){
+          $("#nombre").css("visibility", "hidden");
+          $("#nombreok").css("visibility", "hidden");
+          Game.setBoard(3,new capaNombre(input));
+      }
 };
 
 

@@ -50,7 +50,7 @@ table {
 
 /* Center the container */
 #container {
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   width:960px ;
   background-color:#83A85C ;
 }
@@ -77,3 +77,10 @@ h1, h2, h3{
   font-family: Comic Sans MS;
   text-align:center;
 }
+#nombre,#nombreok{
+  position:relative;
+  left:35%;
+  margin-top:10px;
+  
+  text-align: center;
+} 

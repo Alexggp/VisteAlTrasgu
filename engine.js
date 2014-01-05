@@ -351,7 +351,7 @@ var imprimir=function(){
                         
                         //volvemos a dejar el board como estaba
                         Game.boards[1].objects=saved;
-                  },1/9);
+                  },10);
 };
 
 var capaNombre = function(nombre) {

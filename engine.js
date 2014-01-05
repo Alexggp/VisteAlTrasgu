@@ -20,13 +20,8 @@ var Game = new function() {
 	      this.ctx = this.canvas.getContext && this.canvas.getContext('2d');
 	      if(!this.ctx) { return alert("Please upgrade your browser to play"); }
 
-
-
-
-
 	    	
-	      this.canvasMultiplier =1;  //Escala lo que vayamos a pintar en todos los pasos draw. 
-	      //this.setupInput();
+	 
 
 
 	      
@@ -40,7 +35,7 @@ var Game = new function() {
              el.mozRequestFullScreen();
           }            
         }
-	      //this.canvas.addEventListener("dblclick",Game.fullscreen);
+       this.canvas.addEventListener("dblclick",Game.fullscreen);
 
 	      
 
@@ -51,28 +46,6 @@ var Game = new function() {
         mouse.init();     
 	      SpriteSheet.load(sprite_data,callback);
    };
-/*
-    // Gestión de la entrada (teclas para izda/derecha y disparo)
-    var KEY_CODES = { 38:'up2', 40:'down2', 87:'up1', 83:'down1', 32 :'fire', 39:'dcha', 37:'izda',81:'esc',77:'mute' };  
-    this.keys = {};
-
-    this.setupInput = function() {
-	    $(window).keydown(function(event){
-	        if (KEY_CODES[event.which]) {
-		    Game.keys[KEY_CODES[event.which]] = true;
-		    return false;
-	        }
-	    });
-	
-	    $(window).keyup(function(event){
-	        if (KEY_CODES[event.which]) {
-		    Game.keys[KEY_CODES[event.which]] = false;
-		    return false;
-	        }
-	    });
-	
-    }
-*/
 
     // Bucle del juego
     this.boards = [];
@@ -110,15 +83,16 @@ var SpriteSheet = new function() {
     };
 
     
-    this.draw = function(ctx,sprite,x,y,frame) {
+    this.draw = function(ctx,sprite,x,y,frame,factor) {
     var s = this.map[sprite];
+    if (!factor){factor=1;};
     if(!frame) frame = 0;
     ctx.drawImage(this.image,
                         s.sx + frame * s.w, 
                         s.sy, 
                         s.w, s.h, 
                         Math.floor(x), Math.floor(y),
-                        s.w*Game.canvasMultiplier, s.h*Game.canvasMultiplier);
+                        s.w/factor, s.h/factor);
     };
 }
 
@@ -223,7 +197,7 @@ Sprite.prototype.merge = function(props) {
 }
 
 Sprite.prototype.draw = function(ctx) {
-    SpriteSheet.draw(ctx,this.sprite,this.x,this.y,this.frame);
+    SpriteSheet.draw(ctx,this.sprite,this.x,this.y,this.frame,this.factor);
 }
 
 
@@ -289,10 +263,14 @@ var mouse ={
     mouse.current= undefined;  
   },
   movimiento:function(prenda){
+      var factor=prenda.factor;
+      
+      if (!factor){factor=1;}
+      
       var trasgu = prenda.board.objects[0];
       
-      if (mouse.down && mouse.x > prenda.x && mouse.x < prenda.x+prenda.w && mouse.y > prenda.y 
-                                      && mouse.y < prenda.y+prenda.h && mouse.current == undefined){
+      if (mouse.down && mouse.x > prenda.x && mouse.x < prenda.x+prenda.w/factor && mouse.y > prenda.y 
+                                      && mouse.y < prenda.y+prenda.h/factor && mouse.current == undefined){
         mouse.current=prenda;
         
         // Reorganizamos board.objects para que la prenda actual sea la ultima en pintarse
@@ -305,13 +283,13 @@ var mouse ={
 
       }
       if (mouse.dragging && mouse.current==prenda){
-          prenda.x=mouse.x-prenda.w/2;
-          prenda.y=mouse.y-prenda.h/2;
+          prenda.x=mouse.x-prenda.w/(2*factor);
+          prenda.y=mouse.y-prenda.h/(2*factor);
           };
           
       if ( !mouse.down){ 
-          if (prenda.x > prenda.colocadox-prenda.w/2 && prenda.x < prenda.colocadox + prenda.w*3/2
-                && prenda.y > prenda.colocadoy - prenda.h/2 && prenda.y < prenda.colocadoy + prenda.h*3/2){
+          if (prenda.x > prenda.colocadox-prenda.w && prenda.x < prenda.colocadox + prenda.w
+                && prenda.y > prenda.colocadoy - prenda.h && prenda.y < prenda.colocadoy + prenda.h){
 
               
               //si ya tiene otra prenda puesta enviamos la antigua a su sitio original

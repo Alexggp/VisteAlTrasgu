@@ -12,8 +12,15 @@ por derechos del autor.
 
 Campaña promocional de El Trasgu Animaciones. 
 
-      <tr><h1>El Trasgu Animaciones</h1> </tr>
-      <tr><h2>Animamos cumpleaños y fiestas infatiles</h2> <tr>
-      <tr><h3>Infórmate en  www.eltrasgu.com</h3></tr>
-      <tr><h3>Siguenos en twiter: @TrasguAnimacion y facebook.com/animaciones.eltrasgu </h3></tr>
+### El Trasgu Animaciones
+## Animamos cumpleaños y fiestas infatiles
+## Infórmate en  www.eltrasgu.com
+## Siguenos en twiter: @TrasguAnimacion y facebook.com/animaciones.eltrasgu 
+
+
+
+
+
+Viste Al Trasgu
+Copyright (C) 2013  Alejandro García-Gasco Pérez
       

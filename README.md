@@ -12,10 +12,10 @@ por derechos del autor.
 
 Campaña promocional de El Trasgu Animaciones. 
 
-### El Trasgu Animaciones
+# El Trasgu Animaciones
 ## Animamos cumpleaños y fiestas infatiles
-## Infórmate en  www.eltrasgu.com
-## Siguenos en twiter: @TrasguAnimacion y facebook.com/animaciones.eltrasgu 
+### Infórmate en  www.eltrasgu.com
+### Siguenos en twiter: @TrasguAnimacion y facebook.com/animaciones.eltrasgu 
 
 
 

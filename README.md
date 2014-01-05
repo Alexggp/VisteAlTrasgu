@@ -15,7 +15,7 @@ Campaña promocional de El Trasgu Animaciones.
 # El Trasgu Animaciones
 ## Animamos cumpleaños y fiestas infatiles
 ### Infórmate en  www.eltrasgu.com
-### Siguenos en twiter: @TrasguAnimacion y facebook.com/animaciones.eltrasgu 
+### Siguenos en twiter: @TrasguAnimacion y www.facebook.com/animaciones.eltrasgu 
 
 
 

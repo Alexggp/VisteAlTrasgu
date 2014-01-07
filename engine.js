@@ -23,7 +23,7 @@ var Game = new function() {
 	    	
 	 
 
-
+        /* DE MOMENTO NO QUEREMOS PANTALLA COMPLETA
 	      
 	      this.fullscreen= function(){
            var el = document.getElementById(canvasElementId);
@@ -37,7 +37,7 @@ var Game = new function() {
         }
        this.canvas.addEventListener("dblclick",Game.fullscreen);
 
-	      
+	      */
 
 	      this.loop(); 
 	    

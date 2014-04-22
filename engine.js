@@ -229,6 +229,32 @@ var capaClear = function() {
     this.step = function(dt) {}
 }
 
+var capaClear2 = function() {
+
+    var capa = $('<canvas/>')
+	.attr('width', Game.width)
+	.attr('height', Game.height)[0];
+
+
+
+    var capaCtx = capa.getContext("2d");
+
+ 
+	  capaCtx.fillStyle = "white";
+	  capaCtx.fillRect(0,0,capa.width,capa.height);
+	
+    
+    this.draw = function(ctx) {
+		ctx.drawImage(capa,
+			  0, 0,
+			  capa.width, capa.height,
+			  0, 0,
+			  capa.width, capa.height);
+    }
+
+    this.step = function(dt) {}
+}
+
 	      
 var mouse ={
   x:0,
@@ -340,6 +366,8 @@ var imprimir=function(){
       }
 
       Game.boards[1].objects=nueva;
+      Game.setBoard(0,new capaClear2());
+      $("#container").css("background-color","white");
 
       
       
@@ -351,6 +379,8 @@ var imprimir=function(){
                         
                         //volvemos a dejar el board como estaba
                         Game.boards[1].objects=saved;
+                        Game.setBoard(0,new capaClear());
+                        $("#container").css("background-color","#83A85C");
                   },10);
 };
 

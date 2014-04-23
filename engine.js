@@ -298,6 +298,7 @@ var mouse ={
       if (mouse.down && mouse.x > prenda.x && mouse.x < prenda.x+prenda.w/factor && mouse.y > prenda.y 
                                       && mouse.y < prenda.y+prenda.h/factor && mouse.current == undefined){
         mouse.current=prenda;
+        $("#container").css("cursor","all-scroll");
         
         // Reorganizamos board.objects para que la prenda actual sea la ultima en pintarse
         var listaAux=[];
@@ -314,6 +315,7 @@ var mouse ={
           };
           
       if ( !mouse.down){ 
+          $("#container").css("cursor","pointer");
           if (prenda.x > prenda.colocadox-prenda.w && prenda.x < prenda.colocadox + prenda.w
                 && prenda.y > prenda.colocadoy - prenda.h && prenda.y < prenda.colocadoy + prenda.h){
 

@@ -56,14 +56,21 @@ table {
   margin: 0 auto 0 auto;
   width:960px ;
   height:700px;
-  background-color:#83A85C ;
+  background-color: rgba(131, 168, 92, 1);
   cursor:pointer;
   border-radius:19px;
+  -webkit-animation: myfirst 3s; /* Chrome, Safari, Opera */
   animation: myfirst 3s;
   box-shadow: 0px 0px 50px #83A85C;
 }
 
 @keyframes myfirst{
+        0%   {opacity:0}
+        100% {opacity:1}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst{
         0%   {opacity:0}
         100% {opacity:1}
 }

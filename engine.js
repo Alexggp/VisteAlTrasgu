@@ -370,7 +370,7 @@ var imprimir=function(){
       Game.boards[1].objects=nueva;
       Game.setBoard(0,new capaClear2());
       $("#container").css("background-color","white");
-
+      $("#container").css("border-radius","0px");
       
       
       // dejamos un tiempo para que se pinte la pagina con las restricciones
@@ -383,6 +383,7 @@ var imprimir=function(){
                         Game.boards[1].objects=saved;
                         Game.setBoard(0,new capaClear());
                         $("#container").css("background-color","#83A85C");
+                        $("#container").css("border-radius","19px");
                   },10);
 };
 

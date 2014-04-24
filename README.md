@@ -6,6 +6,12 @@ VisteAlTrasgu
 Es la hora de que los más pequeños se diviertan con este juego infantil de vestir muñecos de El Trasgu Animaciones.
 Confecciona tus modelitos e imprimelos para colgarlos en la nevera o donde te de la gana. 
 
+
+PRUÉBALO!!!!
+
+http://watson.gsyc.es/~alexggp/VisteAlTrasgu/index.html
+
+
 Realizado en javascript con jquery y canvas. Ampliable con otros sprites de ropa, lo cual ha supuesto una limitación 
 por derechos del autor.
 

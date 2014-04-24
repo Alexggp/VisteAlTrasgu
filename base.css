@@ -28,9 +28,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
+html, body {
+	
 	 background-image: url("images/fondo.jpeg");
+	 height: 100%;
+	 width: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -53,8 +55,17 @@ table {
 #container {
   margin: 0 auto 0 auto;
   width:960px ;
+  height:700px;
   background-color:#83A85C ;
   cursor:pointer;
+  border-radius:19px;
+  animation: myfirst 3s;
+  box-shadow: 0px 0px 50px #83A85C;
+}
+
+@keyframes myfirst{
+        0%   {opacity:0}
+        100% {opacity:1}
 }
 
 /* Give canvas a background */
@@ -66,7 +77,7 @@ table {
   height:80px;
   position:absolute;
   top: 3%;
-  left: 90%;
+  left: 87%;
   cursor:pointer;
 }
 #impresora:hover{
@@ -89,3 +100,6 @@ h1, h2, h3{
   
   text-align: center;
 } 
+#nombre{
+  width: 200px;
+}
